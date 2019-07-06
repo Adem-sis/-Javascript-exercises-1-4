@@ -7,30 +7,63 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> A series of Javascript exercises 1-4</h1>
-    <script>
-        function get_achievement(x,y,z){
- let total = x+y+z;
-       return total;
-       
-}
-function grade(x,y,z){
-    let total = get_achievement(x,y,z);
-   //put the result of the get_achievement function in the variable result
+    <h1> Javascript exercises 4 </h1>
+    <h2>Submission </h2>
+ <script>
+     var points = [100,100,0,0,0,90];
 
-    if ( 250 <= total) {
-        document.write("Your grade is A, It is a pass! ");
+function sum(){
+    var total =  0;
+    for(var i=0; i<points.length; i++){
+       total += points[i];
     }
-    else if (200 <= total){
-        return("Your grade is B, It is a pass! ");
+    return total;
+}
+function maxScore(){
+    let mul = 100* points.length;
+    return mul;
+}
+function grade(){
+    let mul = maxScore(points);
+    var Text;
+
+    if ((mul * 0.8) <= sum()){
+
+        //console.log = ("Yor Grade is A,");
+        Text = "Yor Grade is A,";
+        }
+    else if ((mul*0.6) <= sum()){
+        Text = "Yor Grade is B,";
     }
-    else if  (100 <= total){
-        return("Your grade is C, It is a pass! ");
-    }       
-    else {(0 <= total)
-        return("Your grade is D, It is a fail! ");
+    else if ((mul*0.4)<= sum()){
+        Text= "Your Grade is C,";
     }
- }
-console.log(grade (90,90,90));</script>
+    else {
+        Text= "Your Grade is D";
+    }
+    return Text;
+}
+function pass_or_failer(){
+    var Text = "You Passed! "
+    for(i=0; i<points.length; i++){
+    
+        //console.log("i="+i);
+        //console.log("point="+ points[i]);
+
+        if   (points[i] < 60){
+            //console.log("You Failed!");
+            Text = "You Failed! "
+
+            break; // this will execute the code in this scope
+        }        
+    }    
+    return Text;          
+}
+console.log(grade());
+console.log(pass_or_failer());
+
+  
+
+    </script>   
 </body>
 </html>
