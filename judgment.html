@@ -1,69 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Javascript Exercise</title>
-</head>
-<body>
-    <h1> Javascript exercises 4 </h1>
-    <h2>Submission </h2>
- <script>
-     var points = [100,100,0,0,0,90];
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="./css/judgment.css">
+    <title>DIVE INTO SAMPLE JavaScript</title>
+  </head>
+  <body>
+    <div class="container">
+      <br><br>
+      <p>Unnamed: Test Taro</p>
 
-function sum(){
-    var total =  0;
-    for(var i=0; i<points.length; i++){
-       total += points[i];
-    }
-    return total;
-}
-function maxScore(){
-    let mul = 100* points.length;
-    return mul;
-}
-function grade(){
-    let mul = maxScore(points);
-    var Text;
+      <p>National language:<input type="number" id="national_language" value=0></p>
+      <p>English：<input type="number" id="english" value=0></p>
+      <p>Mathematics：<input type="number" id="mathematics" value=0></p>
+      <p>Science：<input type="number" id="science" value=0></p>
+      <p>Society：<input type="number" id="society" value=0></p>
 
-    if ((mul * 0.8) <= sum()){
+      <br><br>
+      <p>Total points：<label id="sum_indicate"></label></p>
 
-        //console.log = ("Yor Grade is A,");
-        Text = "Yor Grade is A,";
-        }
-    else if ((mul*0.6) <= sum()){
-        Text = "Yor Grade is B,";
-    }
-    else if ((mul*0.4)<= sum()){
-        Text= "Your Grade is C,";
-    }
-    else {
-        Text= "Your Grade is D";
-    }
-    return Text;
-}
-function pass_or_failer(){
-    var Text = "You Passed! "
-    for(i=0; i<points.length; i++){
-    
-        //console.log("i="+i);
-        //console.log("point="+ points[i]);
+      <br><br>
+      <p>Average score：<label id="avarage_indicate"></label></p>
 
-        if   (points[i] < 60){
-            //console.log("You Failed!");
-            Text = "You Failed! "
+      <br><br>
+      <p><label class="btn btn-primary" id="btn-evaluation">Rank</label> ： <label id="evaluation"></label></p>
 
-            break; // this will execute the code in this scope
-        }        
-    }    
-    return Text;          
-}
-console.log(grade());
-console.log(pass_or_failer());
+      <br><br>
+      <p><label class="btn btn-success" id="btn-judge">Judgment</label> ： <label id="judge"></label></p>
 
-  
-
-    </script>   
-</body>
+      <br><br>
+      <p><label class="btn btn-warning" id="btn-declaration">Final judge</label> ： <label id="declaration"></label></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/judgment.js"></script>
+  </body>
 </html>
